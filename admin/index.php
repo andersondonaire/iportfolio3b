@@ -1,3 +1,15 @@
+<?php
+
+if($_POST['logar']){
+
+    $usuario = $_POST['usuario'];
+    $senha = $_POST['senha'];
+
+    
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,18 +25,20 @@
     <div class="container">
         <form class="form-group" action="" method="post">
 
+            <div class="col-md-4 offset-md-4">
 
-            <div class="row">
-                <label class="label" for="usuario">Usuário</label>
-                <input class="form-control" type="text" id="usuario" name="usuario">
-            </div>
+                <div class="row">
+                    <label class="label" for="usuario">Usuário</label>
+                    <input class="form-control" type="text" id="usuario" name="usuario">
+                </div>
 
-            <div class="row">
-                <label for="senha" class="label">Senha</label>
-                <input class="form-control" type="password" id="senha" name="senha">
-            </div>
-            <div class="row">
-                <input class="form-control" type="submit" id="logar" name="logar">
+                <div class="row">
+                    <label for="senha" class="label">Senha</label>
+                    <input class="form-control" type="password" id="senha" name="senha">
+                </div>
+                <div class="row">
+                    <input class="form-control btn btn-success" type="submit" id="logar" name="logar" value="Logar">
+                </div>
             </div>
 
         </form>
