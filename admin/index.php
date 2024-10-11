@@ -4,12 +4,12 @@ session_start();
 
 if($_POST['logar']){
 
-    $form_usuario = $_POST['usuario'];
-    $form_senha = $_POST['senha'];
+    $form_usuario = $_POST['usuario'] ?? "";
+    $form_senha = $_POST['senha'] ?? "";
 
     include "./connect.php";
 
-    $db = connect::select("SELECT *, COUNT(id) AS  qt FROM usuario WHERE login = '{$form_usuario}'");
+    $db = connect::select("SELECT *, COUNT(id) AS  qt FROM usuario WHERE login = '{$form_usuario}' GROUP BY id");
 
     if($db['qt'] == 0){
         echo "Usuário não existe<br>";
