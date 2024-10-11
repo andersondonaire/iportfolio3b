@@ -2,8 +2,10 @@
 
 if($_POST['logar']){
 
-    $usuario = $_POST['usuario'];
-    $senha = $_POST['senha'];
+    $form_usuario = $_POST['usuario'];
+    $form_senha = $_POST['senha'];
+
+
 
     
 }
