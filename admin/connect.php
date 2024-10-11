@@ -2,7 +2,7 @@
 
 define('HOST', 'localhost');
 
-define('DB', 'site');
+define('DB', 'iportfolio-3b');
 
 define('USER', 'root');
 

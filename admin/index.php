@@ -1,13 +1,31 @@
 <?php
 
+session_start();
+
 if($_POST['logar']){
 
     $form_usuario = $_POST['usuario'];
     $form_senha = $_POST['senha'];
 
+    include "./connect.php";
 
+    $db = connect::select("SELECT *, COUNT(id) AS  qt FROM usuario WHERE login = '{$form_usuario}'");
 
-    
+    if($db['qt'] == 0){
+        echo "Usuário não existe<br>";
+        echo "<button onclick=\"history.back()\">Voltar</button>";
+        exit();
+    }
+
+    if($db['senha'] != $form_senha){
+        echo "A senha está incorreta";
+        echo "<button onclick=\"history.back()\">Voltar</button>";
+        exit();     
+    }
+
+    $_SESSION['usuario'] = $db['login'];
+
+    header("Location:home.php");
 }
 
 ?>
