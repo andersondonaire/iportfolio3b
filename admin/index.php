@@ -2,7 +2,7 @@
 
 session_start();
 
-if($_POST['logar']){
+if(isset($_POST['logar'])){
 
     $form_usuario = $_POST['usuario'] ?? "";
     $form_senha = $_POST['senha'] ?? "";
@@ -48,7 +48,7 @@ if($_POST['logar']){
             <div class="col-md-4 offset-md-4">
 
                 <div class="row">
-                    <label class="label" for="usuario">Usuário</label>
+                    <label class="label" for="usuario">Login</label>
                     <input class="form-control" type="text" id="usuario" name="usuario">
                 </div>
 
