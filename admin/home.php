@@ -23,22 +23,25 @@ include "./verifica.php";
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="./home.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre</a>
+                            <a class="nav-link" href="./home.php?pg=sobre">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Experiência</a>
+                            <a class="nav-link" href="./home.php?pg=experiencia">Experiência</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Portifólio</a>
+                            <a class="nav-link" href="./home.php?pg=portfolio">Portifólio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Serviços</a>
+                            <a class="nav-link" href="./home.php?pg=servicos">Serviços</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Contato</a>
+                            <a class="nav-link" href="./home.php?pg=contato">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./home.php?pg=footer">Rodapé</a>
                         </li>
                     </ul>
                 </div>
