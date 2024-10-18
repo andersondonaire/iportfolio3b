@@ -50,7 +50,15 @@ include "./verifica.php";
     </header>
 
     <div class="container">
-
+    <?php
+    $pg = $_GET['pg']?? null;
+     
+    if(isset($pg)){
+        include "./pg/{$pg}.php";
+    }else{
+        include "./pg/inicio.php";
+    }
+    ?>
     </div>
 
     <footer>
