@@ -16,6 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `settings`
+--
+
+DROP TABLE IF EXISTS `settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `settings` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `setting_key` varchar(50) DEFAULT NULL,
+  `setting_value` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `settings`
+--
+
+/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+INSERT INTO `settings` VALUES (1,'img_profile','teste'),(2,'nome_perfil','Anderson'),(3,'link_face','https://facebook.com'),(4,'link_insta','https://instagram.com'),(5,'link_linkedin','https://linkedin.com');
+/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
+
+--
 -- Table structure for table `usuario`
 --
 
@@ -52,4 +75,4 @@ INSERT INTO `usuario` VALUES (1,'Anderson','andersondonaire','123456');
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-18  7:22:42
+-- Dump completed on 2024-10-24  8:15:56

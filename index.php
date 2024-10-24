@@ -1,3 +1,9 @@
+<?php
+
+include_once "./admin/connect.php";
+include_once "./admin/helpers.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -48,13 +54,13 @@
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Alex Smith</h1>
+      <h1 class="sitename"><?=Helpers::getSettings('nome_perfil')?></h1>
     </a>
 
     <div class="social-links text-center">
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="<?=Helpers::getSettings('link_face')?>" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="<?=Helpers::getSettings('link_insta')?>" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="<?=Helpers::getSettings('link_linkedin')?>" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
@@ -97,7 +103,7 @@
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Alex Smith</h2>
+        <h2><?=Helpers::getSettings("nome_perfil")?></h2>
         <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
 
