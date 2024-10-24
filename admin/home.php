@@ -1,5 +1,6 @@
 <?php
 include "./verifica.php";
+include "./helpers.php";
 ?>
 <!doctype html>
 <html lang="pt-br">

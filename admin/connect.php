@@ -81,7 +81,7 @@ class connect
         $con = $cnx->prepare($SQL);
         if (!$con->execute()) {
             $erro = $con->errorInfo();
-            return array('msg' => $erro['2'], "codErro" => $erro['1']);
+            return array('msg' => $erro['2'], "codErro" => $erro['1'], "sql"=>$SQL);
         }
         return "Inserido com Sucesso!";
         $cnx = null;
@@ -109,7 +109,7 @@ class connect
         $con = $cnx->prepare($SQL);
         if (!$con->execute()) {
             $erro = $con->errorInfo();
-            return array("msg" => $erro['2'], "codErro" => $erro['1']);
+            return array("msg" => $erro['2'], "codErro" => $erro['1'], "sql"=>$SQL);
         }
         return array("msg" => "Registro alterado com sucesso!", "codErro" => 0);
 
