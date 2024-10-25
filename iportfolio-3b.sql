@@ -75,4 +75,4 @@ INSERT INTO `usuario` VALUES (1,'Anderson','andersondonaire','123456');
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-24  8:15:56
+-- Dump completed on 2024-10-25  7:19:58
