@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST)){
+if(isset($_POST['salvar'])){
 
 Helpers::setSettings("nome_perfil",$_POST['nome_perfil']);
 Helpers::setSettings("link_face",$_POST['link_face']);
@@ -10,7 +10,10 @@ Helpers::setSettings("link_linkedin",$_POST['link_linkedin']);
 $txt_home = $_POST['txt_home'];
 $txt_home = explode(",",$txt_home);
 
-$json_txt_home = json_encode($txt_home);
+
+var_dump($txt_home);
+
+$json_txt_home = json_encode($txt_home,true);
 
 Helpers::setSettings("txt_home",$json_txt_home);
 
@@ -57,14 +60,18 @@ if(isset($_FILES['img_profile'])){
 
     <?php
 
-    $txt_home = json_decode(Helpers::getSettings("txt_home"), true);
+    $txt_home = json_decode(Helpers::getSettings("txt_home"));
     $txt_home_value = "";
 
+    $total = count($txt_home);
+    $i = 0;
     
     foreach ($txt_home as $value) {
-        $txt_home_value .= $value . ",";
+        $txt_home_value .= $value;
+        if (++$i < $total) {
+            $txt_home_value .= ",";
+        }
     }
-
 
     ?>
     <input class="form-control" type="text" name="txt_home" id="txt_home" value="<?= $txt_home_value ?>">
