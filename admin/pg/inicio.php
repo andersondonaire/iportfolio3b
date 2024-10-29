@@ -59,9 +59,13 @@ if(isset($_FILES['img_profile'])){
 
     $txt_home = json_decode(Helpers::getSettings("txt_home"), true);
     $txt_home_value = "";
+
+    
     foreach ($txt_home as $value) {
-        $txt_home_value .= $value . ", ";
+        $txt_home_value .= $value . ",";
     }
+
+
     ?>
     <input class="form-control" type="text" name="txt_home" id="txt_home" value="<?= $txt_home_value ?>">
     <hr>
