@@ -27,7 +27,7 @@ CREATE TABLE `settings` (
   `setting_key` varchar(50) DEFAULT NULL,
   `setting_value` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `settings` (
 --
 
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
-INSERT INTO `settings` VALUES (1,'img_profile','teste'),(2,'nome_perfil','Anderson'),(3,'link_face','https://facebook.com'),(4,'link_insta','https://instagram.com'),(5,'link_linkedin','https://linkedin.com');
+INSERT INTO `settings` VALUES (1,'img_profile','943447711.jpg'),(2,'nome_perfil','asdf'),(3,'link_face','asdf'),(4,'link_insta','asdf'),(5,'link_linkedin','asfd'),(6,'txt_home','[\"asd\",\"f\",\"a\",\"s\",\"d\",\"fasd\",\"fa\",\"sdf\"]'),(7,'img_fundo',NULL);
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
 --
@@ -75,4 +75,4 @@ INSERT INTO `usuario` VALUES (1,'Anderson','andersondonaire','123456');
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-25  7:19:58
+-- Dump completed on 2024-11-05  8:52:09
