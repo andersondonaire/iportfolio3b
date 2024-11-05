@@ -1,41 +1,60 @@
 <?php
 
-if(isset($_POST['salvar'])){
+if (isset($_POST['salvar'])) {
 
-Helpers::setSettings("nome_perfil",$_POST['nome_perfil']);
-Helpers::setSettings("link_face",$_POST['link_face']);
-Helpers::setSettings("link_insta",$_POST['link_insta']);
-Helpers::setSettings("link_linkedin",$_POST['link_linkedin']);
+    Helpers::setSettings("nome_perfil", $_POST['nome_perfil']);
+    Helpers::setSettings("link_face", $_POST['link_face']);
+    Helpers::setSettings("link_insta", $_POST['link_insta']);
+    Helpers::setSettings("link_linkedin", $_POST['link_linkedin']);
 
-$txt_home = $_POST['txt_home'];
-$txt_home = explode(",",$txt_home);
+    $txt_home = $_POST['txt_home'];
+    $txt_home = explode(",", $txt_home);
 
 
-var_dump($txt_home);
+    var_dump($txt_home);
 
-$json_txt_home = json_encode($txt_home,true);
+    $json_txt_home = json_encode($txt_home, true);
 
-Helpers::setSettings("txt_home",$json_txt_home);
+    Helpers::setSettings("txt_home", $json_txt_home);
 
-//IMAGENS
+    //IMAGENS
 
-if(isset($_FILES['img_profile'])){
+    if (isset($_FILES['img_profile'])) {
 
-    $img = $_FILES['img_profile'];
-    
-    if(file_exists(__DIR__."../../img/".Helpers::getSettings('img_profile'))){
-        unlink(__DIR__."../../img/".Helpers::getSettings('img_profile'));
+        $img = $_FILES['img_profile'];
 
-        
+        if (file_exists(__DIR__ . "../../img/" . Helpers::getSettings('img_profile'))) {
+            unlink(__DIR__ . "../../img/" . Helpers::getSettings('img_profile'));
+        }
 
+        $caminho = '../../img/';
+
+        include_once "./admin/class/upload/class.upload.php";
+
+        $imgPerfil = new \Verot\Upload\Upload($_FILES['img_profile']);
+
+        if ($imgPerfil->uploaded) {
+            $imgPerfil->file_new_name_body = mt_rand();
+            $imgPerfil->image_resize = true;
+            $imgPerfil->image_convert = 'jpg';
+            $imgPerfil->image_x = 200;
+            $imgPerfil->image_ratio_y = true;
+            $imgPerfil->process($caminho);
+
+            if ($imgPerfil->processed) {
+                $imgPerfil->clean();
+
+                $rImgPerfil = $sql->update("settings", ['setting_value' => $imgPerfil->file_dst_name], "setting_key=img_profile");
+               
+                if ($rImgPerfil['codErro'] != 0) {
+                    echo "Erro ao salvar a imagem do perfil no banco de dados.";
+                }
+
+            } else {
+                echo 'Erro ao processar a imagem do perfil: ' . $imgPerfil->error;
+            }
+        }
     }
-
-}
-
-
-
-
-
 }
 ?>
 
@@ -65,7 +84,7 @@ if(isset($_FILES['img_profile'])){
 
     $total = count($txt_home);
     $i = 0;
-    
+
     foreach ($txt_home as $value) {
         $txt_home_value .= $value;
         if (++$i < $total) {
